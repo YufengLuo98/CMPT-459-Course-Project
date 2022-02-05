@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 
 # Load all datasets
-cases_train = pd.read_csv('../datasets/cases_2021_train.csv')
-cases_test = pd.read_csv('../datasets/cases_2021_test.csv')
-cases_location = pd.read_csv('../datasets/location_2021.csv')
+cases_train = pd.read_csv('./datasets/cases_2021_train.csv')
+cases_test = pd.read_csv('./datasets/cases_2021_test.csv')
+cases_location = pd.read_csv('./datasets/location_2021.csv')
 
 
 # 1.1 Cleaning messy outcome labels
@@ -154,9 +154,9 @@ combined_train.columns = combined_train.columns.str.lower()
 combined_test.columns = combined_train.columns.str.lower()
 
 # Save processed data to results directory
-combined_train.to_csv('../results/cases_2021_train_processed.csv', index=False)
-combined_test.to_csv('../results/cases_2021_test_processed.csv', index=False)
-grouped_locations.to_csv('../results/location_2021_processed.csv', index=False)
+combined_train.to_csv('results/cases_2021_train_processed.csv', index=False)
+combined_test.to_csv('results/cases_2021_test_processed.csv', index=False)
+grouped_locations.to_csv('results/location_2021_processed.csv', index=False)
 
 
 # 1.7 Feature Selection
@@ -168,6 +168,6 @@ test_features = combined_test[['age', 'sex', 'province', 'country', 'date_confir
 
 # Save extracted features to results directory
 train_features.to_csv(
-    '../results/cases_2021_train_processed_features.csv', index=False)
+    'results/cases_2021_train_processed_features.csv', index=False)
 test_features.to_csv(
-    '../results/cases_2021_test_processed_features.csv', index=False)
+    'results/cases_2021_test_processed_features.csv', index=False)
